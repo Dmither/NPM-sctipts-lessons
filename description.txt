@@ -1,0 +1,35 @@
+Підготовка до роботи:
+1. Ініціалізуємо npm [npm init]
+
+Компіляція scss в css:
+ 1. Встановити node-sass [npm i -D node-sass]
+ 2. Додати скрипт ["scss": 
+    "node-sass --output-style compressed -o dist/css src/scss"]
+    (--output-style compressed - стиснутий файл на виході
+     -o dist/css src/scss - вивід в dist/css з src/scss)
+ 3. Запустити скрипт [npm run scss]
+Список опцій: https://github.com/sass/node-sass#command-line-interface
+
+Автопрефікси до CSS (PostCSS):
+ 1. Встановити postcss-cli та autoprefixer
+ 2. Додати скрипт ["autoprefixer": 
+    "postcss -u autoprefixer -r dist/css/*"]
+    (-u autoprefixer - використай autoprefixer
+     -r dist/css/* - (replace) заміна всії файлів кодом з префіксом)
+ 3. Запустити
+Налаштування postcss: https://github.com/pirxpilot/postcss-cli
+  autoprefixer: https://github.com/postcss/autoprefixer#options
+
+
+
+
+
+
+
+
+Лінтинг стилів
+ 1. Встановити stylelint
+ 2. Створити файл конфігурації ".stylelintrc.json"
+ 2. Додати скрипт ["lint:scss": 
+    "stylelint src/scss/*.scss --syntax scss"]
+ 3. Запустити
