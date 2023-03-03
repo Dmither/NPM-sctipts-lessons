@@ -1,5 +1,6 @@
 Підготовка до роботи:
-1. Ініціалізуємо npm [npm init]
+ 1. Ініціалізувати npm [npm init]
+ 2. Для windows встановити плагін створення папок [npm i -g mkdirp]
 
 Компіляція scss в css:
  1. Встановити node-sass [npm i -D node-sass]
@@ -20,16 +21,27 @@
 Налаштування postcss: https://github.com/pirxpilot/postcss-cli
   autoprefixer: https://github.com/postcss/autoprefixer#options
 
+Об'єднання та мінімізація JS:
+ 1. Встановити uglify-js
+ 2. Додати скрипт ["uglify": "mkdirp dist/js 
+    && uglifyjs src/js/*.js -m -c -o dist/js/app.min.js"]
+ 3. Запустити
+Налаштування: https://github.com/mishoo/UglifyJS#usage
 
 
 
 
 
-
-
-Лінтинг стилів
+Лінтинг стилів (виявлює помилки, не виправляє їх)
  1. Встановити stylelint
  2. Створити файл конфігурації ".stylelintrc.json"
- 2. Додати скрипт ["lint:scss": 
-    "stylelint src/scss/*.scss --syntax scss"]
- 3. Запустити
+ 3. Додати скрипт ["lint:scss": 
+    "stylelint src/scss/*.scss"]
+ 4. Запустити
+https://github.com/stylelint/stylelint
+Лінтинг коду (виявлює помилки, не виправляє їх)
+ 1. Встановити eslint
+ 2. Ініціалізувати "npm init @eslint/config"
+ 3. Додати скрипт ["lint:js": "eslint ./src/js/*.js"]
+ 4. Запустити
+https://eslint.org/

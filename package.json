@@ -4,18 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy:html": "cp ./src/index.html ./dist && cp -r ./src/html ./dist",
+    "copy:img": "cp -r ./src/img ./dist",
+    "copy": "npm run copy:html && npm run copy:img",
     "scss": "node-sass --output-style compressed -o dist/css src/scss",
     "autoprefixer": "postcss -u autoprefixer --autoprefixer -r dist/css/*",
-    "server": "browser-sync start --server --files 'dist/css/*.css, dist/js/*.js'"
+    "lint:scss": "stylelint src/scss/*.scss",
+    "lint:js": "eslint ./src/js/*.js",
+    "uglify": "mkdirp dist/js && uglifyjs src/js/*.js -m -c -o dist/js/app.min.js",
+    "image": "",
+    "server": "browser-sync start --server ./dist --files dist/**/*.*"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "browser-sync": "^2.27.11",
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "imagemin-cli": "^7.0.0",
     "node-sass": "^8.0.0",
     "postcss-cli": "^10.1.0",
-    "stylelint": "^15.2.0"
+    "stylelint": "^15.2.0",
+    "stylelint-config-standard": "^30.0.1",
+    "stylelint-config-standard-scss": "^7.0.1",
+    "uglify-js": "^3.17.4"
   }
 }

@@ -10,11 +10,15 @@ h1{
 }
 
 
+
+
 .aspect{
-  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  
   transform: rotate(12deg);
   display: grid;
   grid-template-columns: repeat(auto-fit, min-max(200px, 1fr))
 }
 
-.block{}
+a { }
+
