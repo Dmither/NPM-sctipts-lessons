@@ -2,6 +2,17 @@
  1. Ініціалізувати npm [npm init]
  2. Для windows встановити плагін створення папок [npm i -g mkdirp]
 
+
+Зборка та мінімізація html:
+ 1. Встановити html-includes [npm i -D html-includes]
+ 2. Додати скрипт: 
+    ["compile": "html-includes --src src --dest dist"] або
+    ["compile:min": "html-includes --src src --dest dist --minify"]
+ 3. Запустити скрипт
+! Підключувані файли, що починаються з "_" не копіюються !
+Додати: [${require(path)}]
+Список опцій: https://www.npmjs.com/package/html-includes
+
 Компіляція scss в css:
  1. Встановити node-sass [npm i -D node-sass]
  2. Додати скрипт ["scss": 
@@ -21,14 +32,36 @@
 Налаштування postcss: https://github.com/pirxpilot/postcss-cli
   autoprefixer: https://github.com/postcss/autoprefixer#options
 
-Об'єднання та мінімізація JS:
+Зборка та мінімізація JS:
  1. Встановити uglify-js
  2. Додати скрипт ["uglify": "mkdirp dist/js 
     && uglifyjs src/js/*.js -m -c -o dist/js/app.min.js"]
  3. Запустити
 Налаштування: https://github.com/mishoo/UglifyJS#usage
 
+Локальний сервер:
+ 1. Встановити browser-sync
+ 2. Додати скрипт ["server": 
+    "browser-sync start --server ./dist --files dist/**/*.*"]
+ 3. Запустити
+--server вказує на папку хостингу (index.html)
+--files вказує на файли, зміна яких перезавантажує сторінку
+Інформація: https://browsersync.io/
 
+Спостереження за змінами:
+ 1. Встановити onchange
+ 2. Додати скрипт: ["watch": "onchange path -- npm run script"]
+ 3. Запустити
+path має бути в екранованих подвійних лапках [\"src\"]
+Таким чином script запускається кожного разу при зміні файлів path
+
+
+Об'єднання задач:
+ 1. Послідовне виконання ["build": "npm run task1 && npm run task2"]
+ 2. Паралельне виконання:
+    - встановити npm-run-all
+    - додати скрипт: ["parallel": 
+      "run-p task task2]
 
 
 

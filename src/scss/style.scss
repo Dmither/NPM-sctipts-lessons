@@ -1,24 +1,10 @@
 body{
   font-size: 14px;
   span{
-    color: red;
+    color: rebeccapurple;
   }
 }
 
 h1{
-  color: darkblue;
+  color: blue;
 }
-
-
-
-
-.aspect{
-  object-fit: cover;
-  
-  transform: rotate(12deg);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, min-max(200px, 1fr))
-}
-
-a { }
-
