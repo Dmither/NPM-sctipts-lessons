@@ -78,3 +78,5 @@ https://github.com/stylelint/stylelint
  3. Додати скрипт ["lint:js": "eslint ./src/js/*.js"]
  4. Запустити
 https://eslint.org/
+
+https://frontend-stuff.com/blog/npm-scripts/#%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-npm-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D0%BE%D0%B2
